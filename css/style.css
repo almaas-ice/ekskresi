@@ -1,0 +1,412 @@
+/*FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+
+
+
+
+
+/*MY CSS*/
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+}
+
+section {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+h2 {
+	font-weight: 600;
+	font-size: 2.25rem;
+	line-height: 2.625rem;
+}
+.hide {
+	display: none !important;
+}
+
+/*start page*/
+section.start-page {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+}
+.square {
+	background-color: #fff;
+	width: 50px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 4vw;
+}
+h1 {
+	font-size: 4rem;
+	font-weight: 700;
+	line-height: 68px;
+	color: #4d4d4d;
+}
+p {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 26px;
+	letter-spacing: 0.15px;
+	margin-top: 17px;
+	margin-bottom: 48px;
+	color: #343434;
+}
+button {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	padding: 15px 39px;
+	border: none;
+	border-radius: 0;
+	background-color: #ff7070;
+}
+button:hover {
+	background-color: #df6a6a;
+}
+
+
+/*navbar*/
+.navbar {
+	width: 78px;
+	height: 100vh;
+	background-color: #e5e5e5;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 5;
+}
+.box-icon {
+	width: 100%;
+	height: 64px;
+}
+.box-icon:hover {
+	background-color: rgba(255,255,255,.55);
+}
+.nav-active {
+	background-color: #fff;
+}
+.icon {
+	width: 28px;
+	height: 28px;
+	margin: 18px 25px;
+}
+a.github-box {
+	display: block;
+	width: 100%;
+	height: 88px;
+	background-color: #333;
+	position: absolute;
+	bottom: 0;
+}
+a.github-box:hover .github-icon {
+	transform: scale(1.2);
+}
+.github-icon {
+	width: 36px;
+	height: 36px;
+	margin: 26px 21px;
+}
+/*navbar end*/
+
+
+
+
+/*lungs page*/
+.lungs-img-area {
+	margin-left: 6vw;
+	width: 56vw;
+	height: 100vh;
+	display: flex;
+	z-index: 1;
+}
+.lungs-box {
+	width: 420px;
+	height: 420px;
+	position: relative;
+	margin: auto;
+	background-color: #ffdfdf;
+	overflow: hidden;
+}
+.lungs-animation {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: -100%;
+	animation: breathe 10s infinite ;
+}
+.lungs-img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+@keyframes breathe {
+	0% {
+		background-color: #4b99e5;
+		top: -100%;
+	}
+	40% {
+		top: 47%;
+		background-color: #4b99e5;
+	}
+	55% {
+		top: 47%;
+		background-color: #ff4c4d;
+	}
+	95%{
+		top: -100%;
+		background-color: #ff4c4d;
+	}
+}
+
+.explanation-area {
+	width: 38vw;
+	height: 100vh;
+	background-color: #f0f0f0;
+	position: relative;
+	display: flex;
+	z-index: 2;
+}
+.explanation-box {
+	width: 85%;
+	position: relative;
+	margin: auto;
+}
+.title {
+	padding:4vh 18% 4vh 12%;
+	background-color: #ff7070;
+	width: 110%;
+	margin-left: -5vw;
+	margin-bottom: 8vh;
+}
+.title h2 {
+	color: #fff;
+}
+.explanation-box li {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	letter-spacing: 0.15px;
+	margin-top: 28px;
+}
+.explanation-box li b {
+	font-weight: 600;
+	color: #343434;
+}
+.explanation-box ul {
+	margin-left: 16px;
+} 
+ul li::before {
+  content: "\25a0";
+  font-weight: 700;
+  display: inline-block; 
+  width: 12px;
+  margin-left: -1em;
+  transform: scale(1.3)
+}
+ul li.process-1::before {
+	color: #4b99e5;
+}
+ul li.process-2::before {
+	color: #a3739b;
+}
+ul li.process-3::before {
+	color: #ff4c4d;
+}
+/*lungs pag end*/
+
+/*video page*/
+section.video-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 4vw;
+}
+.video-page h2 {
+	color: #333;
+}
+.video-page hr {
+	width: 142px;
+	border: 4px solid #ff7070;
+}
+.video-page iframe {
+	width: 854px;
+	height: 480px;
+	transform: scale(0.75);
+	margin: -24px 0 -16px 0;
+}
+/*video page end*/
+
+/*animation page*/
+.move , .move2 {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.move {
+	z-index: 10;
+}
+.move2 {
+	z-index: 4;
+}
+
+.page-animation , .page-animation2 {
+	position: absolute;
+	width: 100vw;
+	height: 120vh;
+	animation: page-move 1.5s ease 1;
+}
+.page-animation {
+	background-color: #ff7070;
+}
+.page-animation2 {
+	background-color: #f7f7f7;
+}
+
+@keyframes page-move {
+	0% { top: 100vh; }
+	49%{ top: -10vh; }
+	51%{ top: -10vh; }
+	100% { top: -120vh; }
+}
+/*animation page end*/
+
+
+
+
+@media only screen and (max-width: 768px) {
+	/*start page*/
+	.square {
+		width: 40px;
+		height: 80px;
+		position: absolute;
+		top: 0;
+		left: 24px;
+	}
+	h1 {
+		font-size: 2rem;
+		line-height: 36px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 22px;
+		margin: 20px 24px 36px 24px;
+	}
+	button {
+		font-size: 14px;
+		line-height: 26px;
+		letter-spacing: 0.25px;
+		padding: 8px 22px;
+	}
+
+
+	/*navbar*/
+	.navbar {
+		width: 100vw;
+		height: 64px;
+		flex-direction: row;
+		bottom: 0;
+	}
+	.box-icon {
+		width: 52px;
+		height: 56px;
+	}
+	.icon {
+		width: 24px;
+		height: 24px;
+		margin: 20px 13px;
+	}
+	a.github-box {
+		width: 48px;
+		height: 48px;
+		margin: 8px 0;
+		left: 0;
+	}
+	a.github-box:hover .github-icon {
+		transform: scale(1.1);
+	}
+	.github-icon {
+		width: 24px;
+		height: 24px;
+		margin: 12px;
+	}
+	/*navbar end*/
+
+	/*lungs page*/
+	/*image*/
+	section {
+		flex-direction: column-reverse; 
+	}
+	h2 {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.lungs-img-area {
+		margin-left: 0;
+		margin-bottom: 6vh;
+		width: 100vw;
+		height: 50vh;
+	}
+	.lungs-box {
+		width: 200px;
+		height: 200px;
+	}
+	/*explanation*/
+	.explanation-area {
+		width: 100vw;
+		height: 44vh;
+		overflow-y: visible;
+	}
+	.explanation-box {
+		width: 100%;
+		margin: 0 12vw;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.explanation-box ul {
+		margin: auto 0;
+	}
+	.explanation-box li {
+		font-size: 12px;
+		line-height: 16px;
+		margin-top: 20px;
+	}
+	.title {
+		width: 105%;
+		padding:2vh 0 2vh 10%;
+		margin: 8px 0 -20px -16%;
+	}
+	ul li::before {
+	  width: 8px;
+	}
+	/*lungs page end*/
+
+	/*video page*/
+	section.video-page {
+		padding-left: 0;
+	}
+	.video-page hr {
+		width: 72px;
+		border: 2px solid #ff7070;
+		margin-top: 6px;
+	}
+	.video-page iframe {
+		width: 640px;
+		height: 360px;
+		transform: scale(0.5);
+		margin: -72px 0 -12px 0;
+	}
+
+}
+
+
