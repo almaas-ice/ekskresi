@@ -374,7 +374,8 @@ section.video-page {
 		margin: 8px 0 -20px -16%;
 	}
 	ul li::before {
-	  width: 12px;
+	  width: 8px;
+	  margin-left: -12px;
 	}
 	/*lungs page end*/
 
