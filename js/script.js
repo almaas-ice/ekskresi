@@ -1,18 +1,17 @@
-const btnStart = document.querySelector('.start-page button');
-
+// var section
 const pageStart = document.querySelector('.start-page');
 const pageMain = document.querySelector('.main-page');
 const pageVideo = document.querySelector('.video-page');
 const navbar = document.querySelector('.navbar');
-
-const iconBook = document.querySelector('.book');
-const iconYoutube = document.querySelector('.youtube');
-
+// var button
+const btnStart = document.querySelector('.start-page button');
+const iconBook = document.querySelector('.box-icon-book');
+const iconYoutube = document.querySelector('.box-icon-youtube');
+// var animation
 const animation = document.querySelector('.move div');
 const animation2 = document.querySelector('.move2 div');
 
-const iframe = document.querySelector('iframe');
-
+//click start page button
 btnStart.addEventListener('click', function() {
 	animation.classList.add('page-animation');
 	animation.parentElement.classList.remove('hide');
@@ -27,58 +26,33 @@ btnStart.addEventListener('click', function() {
 	},1500)
 })
 
-
-
-let myConfObj = { iframeMouseOver : false }
-window.addEventListener('blur', function(){
-	if(myConfObj.iframeMouseOver) {
-		iframe.classList.add('played');
-		console.log('clicked');
-	}
-})
-document.querySelector('iframe').addEventListener('mouseover', function(){
-	myConfObj.iframeMouseOver = true;
-})
-document.querySelector('iframe').addEventListener('mouseout', function(){
-	myConfObj.iframeMouseOver = false;
-})
-
-
-
+// navbar click & page transition
 iconBook.addEventListener('click', function() {
-	if (iconBook.className != 'box-icon book nav-active') {
+	if (iconBook.className == 'box-icon-book') {
 		pageTransition();
-		if(iframe.className == 'played') stopVideo();
+		// stop video yt (jQuery)
+		$('iframe').each(function(){
+		  this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+		});
 	}
 })
 iconYoutube.addEventListener('click', function() {
-	if (iconYoutube.className != 'box-icon youtube nav-active') {
+	if (iconYoutube.className == 'box-icon-youtube') {
 		pageTransition();
 	}
 })
-iframe.addEventListener('click', function(){
-	iframe.classList.add('played');
-})
-
 function pageTransition() {
 		iconBook.classList.toggle('nav-active');
 		iconYoutube.classList.toggle('nav-active');
-		animation2.parentElement.classList.toggle('hide');
+		animation2.parentElement.classList.remove('hide');
 		animation2.classList.add('page-animation2');
 
 		setTimeout(function(){
 			pageMain.classList.toggle('hide');
 			pageVideo.classList.toggle('hide');
-		},500)
+		},510)
 		setTimeout(function(){
-			animation2.parentElement.classList.toggle('hide');
+			animation2.parentElement.classList.add('hide');
 			animation2.classList.remove('page-animation2');
 		},1500)
 }
-
-function stopVideo() {
-	let iframeSrc = iframe.src;
-	iframe.src = iframeSrc;
-	iframe.classList.remove('played');
-}
-

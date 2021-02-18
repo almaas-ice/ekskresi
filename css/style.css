@@ -1,12 +1,6 @@
 /*FONT*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-
-
-
-
-
-
 /*MY CSS*/
 body {
 	font-family: 'Poppins', sans-serif;
@@ -44,13 +38,13 @@ section.start-page {
 	top: 0;
 	left: 4vw;
 }
-h1 {
+.start-page h1 {
 	font-size: 4rem;
 	font-weight: 700;
 	line-height: 68px;
 	color: #4d4d4d;
 }
-p {
+.start-page p {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 26px;
@@ -59,7 +53,7 @@ p {
 	margin-bottom: 48px;
 	color: #343434;
 }
-button {
+.start-page button {
 	font-size: 1rem;
 	font-weight: 600;
 	color: #fff;
@@ -68,10 +62,11 @@ button {
 	border-radius: 0;
 	background-color: #ff7070;
 }
-button:hover {
+.start-page button:hover {
 	background-color: #df6a6a;
+	cursor: pointer;
 }
-
+/*start page end*/
 
 /*navbar*/
 .navbar {
@@ -84,12 +79,15 @@ button:hover {
 	justify-content: center;
 	z-index: 5;
 }
-.box-icon {
+.box-icon-book,
+.box-icon-youtube {
 	width: 100%;
 	height: 64px;
 }
-.box-icon:hover {
+.box-icon-book:hover,
+.box-icon-youtube:hover {
 	background-color: rgba(255,255,255,.55);
+	cursor: pointer;
 }
 .nav-active {
 	background-color: #fff;
@@ -117,9 +115,6 @@ a.github-box:hover .github-icon {
 }
 /*navbar end*/
 
-
-
-
 /*lungs page*/
 .lungs-img-area {
 	margin-left: 6vw;
@@ -141,7 +136,7 @@ a.github-box:hover .github-icon {
 	height: 100%;
 	width: 100%;
 	top: -100%;
-	animation: breathe 10s infinite ;
+	animation: breathe 10s infinite;
 }
 .lungs-img {
 	width: 100%;
@@ -166,7 +161,6 @@ a.github-box:hover .github-icon {
 		background-color: #ff4c4d;
 	}
 }
-
 .explanation-area {
 	width: 38vw;
 	height: 100vh;
@@ -186,8 +180,6 @@ a.github-box:hover .github-icon {
 	width: 110%;
 	margin-left: -5vw;
 	margin-bottom: 8vh;
-}
-.title h2 {
 	color: #fff;
 }
 .explanation-box li {
@@ -196,10 +188,10 @@ a.github-box:hover .github-icon {
 	line-height: 1.4rem;
 	letter-spacing: 0.15px;
 	margin-top: 28px;
+	color: #343434;
 }
 .explanation-box li b {
 	font-weight: 600;
-	color: #343434;
 }
 .explanation-box ul {
 	margin-left: 16px;
@@ -212,15 +204,9 @@ ul li::before {
   margin-left: -1em;
   transform: scale(1.3)
 }
-ul li.process-1::before {
-	color: #4b99e5;
-}
-ul li.process-2::before {
-	color: #a3739b;
-}
-ul li.process-3::before {
-	color: #ff4c4d;
-}
+ul li.process-1::before { color: #4b99e5; }
+ul li.process-2::before { color: #a3739b; }
+ul li.process-3::before { color: #ff4c4d; }
 /*lungs pag end*/
 
 /*video page*/
@@ -235,8 +221,10 @@ section.video-page {
 	color: #333;
 }
 .video-page hr {
-	width: 142px;
-	border: 4px solid #ff7070;
+	width: 196px;
+	height: 8px; 
+	background-color: #ff7070;
+	border: none;
 }
 .video-page iframe {
 	width: 854px;
@@ -247,7 +235,7 @@ section.video-page {
 /*video page end*/
 
 /*animation page*/
-.move , .move2 {
+.move, .move2 {
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
@@ -260,11 +248,11 @@ section.video-page {
 	z-index: 4;
 }
 
-.page-animation , .page-animation2 {
+.page-animation, .page-animation2 {
 	position: absolute;
 	width: 100vw;
 	height: 120vh;
-	animation: page-move 1.5s ease 1;
+	animation: page-move 1.5s ease 1 forwards;
 }
 .page-animation {
 	background-color: #ff7070;
@@ -282,8 +270,6 @@ section.video-page {
 /*animation page end*/
 
 
-
-
 @media only screen and (max-width: 768px) {
 	/*start page*/
 	.square {
@@ -293,22 +279,22 @@ section.video-page {
 		top: 0;
 		left: 24px;
 	}
-	h1 {
+	.start-page h1 {
 		font-size: 2rem;
 		line-height: 36px;
 	}
-	p {
+	.start-page p {
 		font-size: 14px;
 		line-height: 22px;
 		margin: 20px 24px 36px 24px;
 	}
-	button {
+	.start-page button {
 		font-size: 14px;
 		line-height: 26px;
 		letter-spacing: 0.25px;
 		padding: 8px 22px;
 	}
-
+	/*start page end*/
 
 	/*navbar*/
 	.navbar {
@@ -317,7 +303,8 @@ section.video-page {
 		flex-direction: row;
 		bottom: 0;
 	}
-	.box-icon {
+	.box-icon-book,
+	.box-icon-youtube {
 		width: 52px;
 		height: 56px;
 	}
@@ -387,7 +374,7 @@ section.video-page {
 		margin: 8px 0 -20px -16%;
 	}
 	ul li::before {
-	  width: 8px;
+	  width: 6px;
 	}
 	/*lungs page end*/
 
@@ -396,8 +383,8 @@ section.video-page {
 		padding-left: 0;
 	}
 	.video-page hr {
-		width: 72px;
-		border: 2px solid #ff7070;
+		width: 118px;
+		height: 4px;
 		margin-top: 6px;
 	}
 	.video-page iframe {
@@ -406,7 +393,4 @@ section.video-page {
 		transform: scale(0.5);
 		margin: -72px 0 -12px 0;
 	}
-
 }
-
-
